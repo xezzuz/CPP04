@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:49:40 by nazouz            #+#    #+#             */
-/*   Updated: 2024/05/28 17:58:15 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/19 11:26:27 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Cat&	Cat::operator=(const Cat& original) {
 
 Cat::~Cat() {
 	delete catBrain;
-	std::cout << "Cat Class Destructor Called\n";
+	std::cout << "~Cat Class Destructor Called\n";
 }
 
 void			Cat::makeSound() const {

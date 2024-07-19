@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:37:06 by nazouz            #+#    #+#             */
-/*   Updated: 2024/05/28 12:34:46 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/19 11:26:37 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Animal&		Animal::operator=(const Animal& original) {
 }
 
 Animal::~Animal() {
-	std::cout << "Animal Class Destructor Called\n";
+	std::cout << "~Animal Class Destructor Called\n";
 }
 
 const std::string&	Animal::getType() const {

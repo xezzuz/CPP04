@@ -1,29 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 13:23:11 by nazouz           ###   ########.fr       */
+/*   Created: 2024/07/19 19:57:01 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/19 19:57:33 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iomanip>
+#include "MateriaSource.hpp"
 
-int main()
-{
-	// AAnimal*		anAnimal = new AAnimal(); // compiler error
+MateriaSource::MateriaSource() {
 
-	const AAnimal* aDog = new Dog();
-	const AAnimal* aCat = new Cat();
+}
 
-	delete aDog;	// should not create a leak
-	delete aCat;
+MateriaSource::MateriaSource(const MateriaSource&	original) {
 
-	return 0;
+}
+
+MateriaSource&		MateriaSource::operator=(const MateriaSource&	original) {
+
+}
+
+MateriaSource::~MateriaSource() {
+
+}
+
+void			MateriaSource::learnMateria(AMateria*) {
+
+}
+
+AMateria* 		MateriaSource::createMateria(std::string const & type) {
+
 }

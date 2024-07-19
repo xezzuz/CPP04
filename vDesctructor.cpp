@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   vDesctructor.cpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 13:23:11 by nazouz           ###   ########.fr       */
+/*   Created: 2024/07/19 11:18:28 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/19 11:24:45 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iomanip>
+#include <iostream>
 
-int main()
-{
-	// AAnimal*		anAnimal = new AAnimal(); // compiler error
+class Base {
+	public:
+		Base() {
+			std::cout << "Base Constructor\n";
+		}
+	
+		virtual ~Base() {
+			std::cout << "~Base Destructor\n";
+		}
+};
 
-	const AAnimal* aDog = new Dog();
-	const AAnimal* aCat = new Cat();
+class Derived : public Base {
+	public:
+		Derived() {
+			std::cout << "Derived Constructor\n";
+		}
+	
+		~Derived() {
+			std::cout << "~Derived Destructor\n";
+		}
+};
 
-	delete aDog;	// should not create a leak
-	delete aCat;
+int main(void) {
+	Base*	obj;
 
-	return 0;
+	obj = new Derived();
+
+	delete obj;
 }

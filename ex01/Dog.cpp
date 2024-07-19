@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:50:08 by nazouz            #+#    #+#             */
-/*   Updated: 2024/05/28 17:22:25 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/19 11:26:32 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Dog&	Dog::operator=(const Dog& original) {
 
 Dog::~Dog() {
 	delete dogBrain;
-	std::cout << "Dog Class Destructor Called\n";
+	std::cout << "~Dog Class Destructor Called\n";
 }
 
 void			Dog::makeSound() const {

@@ -1,29 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 13:23:11 by nazouz           ###   ########.fr       */
+/*   Created: 2024/07/19 17:40:09 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/19 19:39:27 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iomanip>
+#ifndef ICE_HPP
+#define ICE_HPP
 
-int main()
-{
-	// AAnimal*		anAnimal = new AAnimal(); // compiler error
+#include "AMateria.hpp"
+#include "Character.hpp"
 
-	const AAnimal* aDog = new Dog();
-	const AAnimal* aCat = new Cat();
+class Ice : public AMateria {
+	private:
+		
+	public:
+		Ice();
+		Ice(const std::string	type); // is it necessary?
+		Ice(const Ice& original);
+		Ice&		operator=(const Ice& original);
+		~Ice();
+		
+		AMateria*	clone();
+		void		use(ICharacter& target);
+};
 
-	delete aDog;	// should not create a leak
-	delete aCat;
-
-	return 0;
-}
+#endif

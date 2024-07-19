@@ -1,33 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:32:13 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 11:49:13 by nazouz           ###   ########.fr       */
+/*   Created: 2024/07/19 17:20:31 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/19 19:38:33 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ANIMAL_HPP
-#define ANIMAL_HPP
+#ifndef AMATERIA_HPP
+#define AMATERIA_HPP
 
-#include "Brain.hpp"
 #include <iostream>
 
-class Animal {
+class AMateria
+{
 	protected:
-		std::string		type;
+		// to-do
+		std::string			type;
 	public:
-		Animal();
-		Animal(const std::string type);
-		Animal(const Animal& original);
-		Animal&		operator=(const Animal& original);
-		virtual ~Animal();
+		AMateria();
+		AMateria(const std::string& type);
+		AMateria(const AMateria& original);
+		AMateria&	operator=(const AMateria& original);
+		~AMateria();
 
-		const std::string&				getType() const;
-		virtual void					makeSound() const;
+		std::string const &	getType() const;
+		
+		/*
+			pure virtual functions, needs to be implemented in all subclasses
+		*/ 
+		virtual	AMateria*	clone() = 0;
+		virtual	void		use(ICharacter& target);
+
 };
 
 #endif

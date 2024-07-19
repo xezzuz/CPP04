@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 13:23:11 by nazouz           ###   ########.fr       */
+/*   Created: 2024/07/19 17:39:51 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/19 19:41:16 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iomanip>
+#include "Cure.hpp"
 
-int main()
-{
-	// AAnimal*		anAnimal = new AAnimal(); // compiler error
+Cure::Cure() {
+	type = "cure";
+}
 
-	const AAnimal* aDog = new Dog();
-	const AAnimal* aCat = new Cat();
+Cure::Cure(const Cure& original) {
+	*this = original;
+}
 
-	delete aDog;	// should not create a leak
-	delete aCat;
+Cure&		Cure::operator=(const Cure& original) {
+	if (this != &original) {
+		type = original.type;
+	}
+	return *this;
+}
 
-	return 0;
+Cure::~Cure() {
+	
+}
+
+AMateria*	Cure::clone() {
+	return new Cure(type);
+}
+
+void		Cure::use(ICharacter& target) {
+	std::cout << "* heals " << target.getName() << "’s wounds *\n";
 }

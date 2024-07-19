@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 13:32:33 by nazouz            #+#    #+#             */
-/*   Updated: 2024/05/28 17:10:59 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/19 11:26:40 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,5 @@ Brain& Brain::operator=(const Brain& original) {
 }
 
 Brain::~Brain() {
-	std::cout << "Brain Class Destructor Called\n";
+	std::cout << "~Brain Class Destructor Called\n";
 }

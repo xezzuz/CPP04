@@ -1,29 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 13:23:11 by nazouz           ###   ########.fr       */
+/*   Created: 2024/07/19 17:39:51 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/19 19:41:24 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iomanip>
+#include "Ice.hpp"
 
-int main()
-{
-	// AAnimal*		anAnimal = new AAnimal(); // compiler error
+Ice::Ice() {
+	type = "ice";
+}
 
-	const AAnimal* aDog = new Dog();
-	const AAnimal* aCat = new Cat();
+Ice::Ice(const Ice& original) {
+	*this = original;
+}
 
-	delete aDog;	// should not create a leak
-	delete aCat;
+Ice&		Ice::operator=(const Ice& original) {
+	if (this != &original) {
+		type = original.type;
+	}
+	return *this;
+}
 
-	return 0;
+Ice::~Ice() {
+	
+}
+
+AMateria*	Ice::clone() {
+	return new Ice(type);
+}
+
+void		Ice::use(ICharacter& target) {
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 }
