@@ -6,15 +6,15 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 11:50:14 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/25 08:59:59 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
+#include "WrongAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-
-// Constructors and destructors of each class must display specific messages.
+#include "WrongCat.hpp"
 
 int main(void) {
 	const Animal* ptrAnimal = new Animal();
@@ -31,6 +31,19 @@ int main(void) {
 	delete ptrAnimal;
 	delete ptrDog;
 	delete ptrCat;
+
+	std::cout << std::string(45, '-') << std::endl;
+	
+	const WrongAnimal* ptrWrongAnimal = new WrongAnimal();
+	const WrongAnimal* ptrWrongCat = new WrongCat();
+
+	std::cout << ptrWrongAnimal->getType() << " " << std::endl;
+	std::cout << ptrWrongCat->getType() << " " << std::endl;
+	ptrWrongAnimal->makeSound();
+	ptrWrongCat->makeSound();		// this should print WrongAnimal sound
+
+	delete ptrWrongAnimal;
+	delete ptrWrongCat;
 
 	return 0;
 }

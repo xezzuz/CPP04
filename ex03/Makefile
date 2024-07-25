@@ -5,20 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/19 09:12:32 by nazouz            #+#    #+#              #
-#    Updated: 2024/07/23 10:22:26 by nazouz           ###   ########.fr        #
+#    Created: 2024/07/20 18:44:26 by nazouz            #+#    #+#              #
+#    Updated: 2024/07/20 18:52:21 by nazouz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			Polymorphism
+NAME			=			Materia
 
 CPP				=			c++
 
 CPPFLAGS		=			-Wall -Wextra -Werror
 
-INCLUDES		=			Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+INCLUDES		=			AMateria.hpp Character.hpp ICharacter.hpp MateriaSource.hpp \
+							IMateriaSource.hpp Cure.hpp Ice.hpp
 
-SRCS			=			main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS			=			AMateria.cpp Character.cpp MateriaSource.cpp Cure.cpp Ice.cpp main.cpp
 
 OBJS			=			$(SRCS:.cpp=.o)
 

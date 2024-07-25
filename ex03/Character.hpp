@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 18:38:36 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 19:15:51 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/22 14:33:12 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ class Character : public ICharacter {
 	private:
 		std::string			name;
 		AMateria*			inventory[4];
+		AMateria*			gCollector[1024];
+		unsigned int		gCollElemCount;
 	public:
 		Character();
-		Character(const std::string	name);
+		Character(const std::string&	name);
 		Character(const Character&	original);
 		Character&		operator=(const Character&	original);
 		~Character();

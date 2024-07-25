@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 13:23:11 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/23 11:01:30 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ int main()
 
 	const AAnimal* aDog = new Dog();
 	const AAnimal* aCat = new Cat();
+
+	aDog->makeSound();
+	aCat->makeSound();
 
 	delete aDog;	// should not create a leak
 	delete aCat;

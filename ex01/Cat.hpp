@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:41:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 11:03:47 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/23 10:38:34 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ class Cat : public Animal {
 		~Cat();
 
 		void				makeSound() const;
-		Brain*				getBrain(); //?
+		Brain*				getBrain();
 };
 
 #endif

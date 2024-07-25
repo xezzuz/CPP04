@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/19 19:52:06 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 19:55:41 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/21 16:39:54 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class MateriaSource : public IMateriaSource
 		MateriaSource(const MateriaSource&	original);
 		MateriaSource&		operator=(const MateriaSource&	original);
 		~MateriaSource();
-	
+
 		void			learnMateria(AMateria*);
 		AMateria* 		createMateria(std::string const & type);
 };

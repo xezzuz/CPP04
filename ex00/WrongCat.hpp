@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:41:11 by nazouz            #+#    #+#             */
-/*   Updated: 2024/05/28 14:21:06 by nazouz           ###   ########.fr       */
+/*   Created: 2024/05/28 11:41:21 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/23 10:20:36 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal {
-	private:
-		Brain	*ptrToBrain;
+class WrongCat : public WrongAnimal {
 	public:
-		Dog();
-		Dog(const std::string type);
-		Dog(const Dog& original);
-		Dog&	operator=(const Dog& original);
-		~Dog();
+		WrongCat();
+		WrongCat(const std::string type);
+		WrongCat(const WrongCat& original);
+		WrongCat&	operator=(const WrongCat& original);
+		~WrongCat();
 
 		void				makeSound() const;
 };

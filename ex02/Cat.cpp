@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:49:40 by nazouz            #+#    #+#             */
-/*   Updated: 2024/05/28 17:58:15 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/25 09:35:23 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Cat::Cat(const Cat& original) {
 Cat&	Cat::operator=(const Cat& original) {
 	if (this != &original) {
 		this->type = original.type;
+		delete catBrain;
 		catBrain = new Brain(*original.catBrain);
 		std::cout << "Cat Class Assignment Operator Called\n";
 	}

@@ -6,7 +6,7 @@
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/28 11:50:08 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/19 11:26:32 by nazouz           ###   ########.fr       */
+/*   Updated: 2024/07/25 09:01:52 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ Dog::Dog(const Dog& original) {
 Dog&	Dog::operator=(const Dog& original) {
 	if (this != &original) {
 		this->type = original.type;
+		delete dogBrain;
 		dogBrain = new Brain(*original.dogBrain);
 		std::cout << "Dog Class Assignment Operator Called\n";
 	}
