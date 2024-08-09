@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/19 09:12:32 by nazouz            #+#    #+#              #
-#    Updated: 2024/07/23 10:22:26 by nazouz           ###   ########.fr        #
+#    Created: 2024/07/11 13:04:28 by nazouz            #+#    #+#              #
+#    Updated: 2024/07/11 13:53:49 by nazouz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			Polymorphism
+NAME			=			ClapTrap
 
 CPP				=			c++
 
 CPPFLAGS		=			-Wall -Wextra -Werror
 
-INCLUDES		=			Animal.hpp Dog.hpp Cat.hpp WrongAnimal.hpp WrongCat.hpp
+INCLUDES		=			ClapTrap.hpp
 
-SRCS			=			main.cpp Animal.cpp Dog.cpp Cat.cpp WrongAnimal.cpp WrongCat.cpp
+SRCS			=			main.cpp ClapTrap.cpp
 
 OBJS			=			$(SRCS:.cpp=.o)
 

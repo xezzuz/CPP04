@@ -5,60 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/25 09:14:45 by nazouz           ###   ########.fr       */
+/*   Created: 2024/05/23 17:26:34 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/18 10:49:29 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iomanip>
+#include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
-// void	foo() {
-// 	system("leaks Polymorphism");
-// }
+int main() {
+    // ClapTrap claptrap("Clappy");
+    ScavTrap scavtrap("Scavvy");
 
-// void	compareCopies(Cat& firstCopy, Cat& secondCopy) {
-// 	std::cout << "\n\n\n<----------- DEEPCOPY TEST ----------->\n\n";
-// 	std::cout << "Cat Object Address:\t\t" << &firstCopy
-// 			  << "    |    " << &secondCopy << std::endl;
-// 	std::cout << "Cat Brain Object Address:\t" << firstCopy.getBrain()
-// 			  << "    |    " << secondCopy.getBrain() << std::endl;
-// 	std::cout << "Cat Brain Ideas[0] Address:\t" << &(firstCopy.getBrain()->ideas[0])
-// 			  << "    |    " << &(secondCopy.getBrain()->ideas[0]) << std::endl << std::endl;
-// }
+    // claptrap.attack("target1");
+    // claptrap.takeDamage(3);
+    // claptrap.beRepaired(5);
+    // claptrap.attack("target2");
+    // claptrap.takeDamage(20);
+    // claptrap.attack("target3");
+    // claptrap.beRepaired(10);
 
-int main()
-{
-	// atexit(foo);
+    scavtrap.attack("target1");
+    scavtrap.takeDamage(3);
+    scavtrap.beRepaired(5);
+    scavtrap.attack("target2");
+    scavtrap.takeDamage(20);
+    scavtrap.attack("target3");
+    scavtrap.beRepaired(10);
 
-/*	<---------- SUBJECT TEST I ---------->	*/
-
-	const Animal* aDog = new Dog();
-	const Animal* aCat = new Cat();
-
-	delete aDog;	// should not create a leak
-	delete aCat;
-
-/*	<---------- SUBJECT TEST II ---------->	*/
-
-	Animal*		animals[4] =	{
-									new Dog(),
-									new Dog(),
-									new Cat(),
-									new Cat()
-								};
-
-	for (int i = 0; i < 4; i++) {
-		delete animals[i];
-	}
-
-/*	<----------- DEEPCOPY TEST ----------->	*/
-
-	// Cat	originalCat;
-	// Cat	copiedCat(originalCat);
-	// compareCopies(originalCat, copiedCat);
-
-	return 0;
+    scavtrap.guardGate();
+    
+    return 0;
 }

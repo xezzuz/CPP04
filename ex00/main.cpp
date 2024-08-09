@@ -5,45 +5,23 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/25 08:59:59 by nazouz           ###   ########.fr       */
+/*   Created: 2024/05/23 17:26:34 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/18 10:53:12 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-#include "WrongAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include "WrongCat.hpp"
+#include "ClapTrap.hpp"
 
-int main(void) {
-	const Animal* ptrAnimal = new Animal();
-	const Animal* ptrDog = new Dog();
-	const Animal* ptrCat = new Cat();
+int main() {
+    ClapTrap claptrap("Clappy");
 
-	std::cout << ptrAnimal->getType() << " " << std::endl;
-	std::cout <<ptrDog->getType() << " " << std::endl;
-	std::cout << ptrCat->getType() << " " << std::endl;
-	ptrAnimal->makeSound();
-	ptrDog->makeSound();
-	ptrCat->makeSound();
+    claptrap.attack("target1");
+    claptrap.takeDamage(3);
+    claptrap.beRepaired(5);
+    claptrap.attack("target2");
+    claptrap.takeDamage(20); // This should reduce hit points to 0
+    claptrap.attack("target3"); // This should not work because hit points are 0
+    claptrap.beRepaired(10); // This should not work because hit points are 0
 
-	delete ptrAnimal;
-	delete ptrDog;
-	delete ptrCat;
-
-	std::cout << std::string(45, '-') << std::endl;
-	
-	const WrongAnimal* ptrWrongAnimal = new WrongAnimal();
-	const WrongAnimal* ptrWrongCat = new WrongCat();
-
-	std::cout << ptrWrongAnimal->getType() << " " << std::endl;
-	std::cout << ptrWrongCat->getType() << " " << std::endl;
-	ptrWrongAnimal->makeSound();
-	ptrWrongCat->makeSound();		// this should print WrongAnimal sound
-
-	delete ptrWrongAnimal;
-	delete ptrWrongCat;
-
-	return 0;
+    return 0;
 }

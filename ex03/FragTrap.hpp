@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:32:13 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/23 10:21:34 by nazouz           ###   ########.fr       */
+/*   Created: 2024/05/27 13:03:38 by nazouz            #+#    #+#             */
+/*   Updated: 2024/05/28 10:47:53 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-#define WRONGANIMAL_HPP
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class WrongAnimal {
-	protected:
-		std::string		type;
+class FragTrap : virtual public ClapTrap {
 	public:
-		WrongAnimal();
-		WrongAnimal(const std::string type);
-		WrongAnimal(const WrongAnimal& original);
-		WrongAnimal&		operator=(const WrongAnimal& original);
-		virtual ~WrongAnimal();
+		FragTrap();
+		FragTrap(std::string Name);
+		FragTrap(const FragTrap& original);
+		FragTrap&	operator=(const FragTrap& original);
+		~FragTrap();
 
-		const std::string&		getType() const;
-		void					makeSound() const;
+		void	highFiveGuys();
 };
 
 #endif

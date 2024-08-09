@@ -5,21 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/20 18:44:26 by nazouz            #+#    #+#              #
-#    Updated: 2024/07/20 18:52:21 by nazouz           ###   ########.fr        #
+#    Created: 2024/07/18 11:00:31 by nazouz            #+#    #+#              #
+#    Updated: 2024/07/18 11:00:53 by nazouz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			Materia
+NAME			=			DiamondTrap
 
 CPP				=			c++
 
 CPPFLAGS		=			-Wall -Wextra -Werror
 
-INCLUDES		=			AMateria.hpp Character.hpp ICharacter.hpp MateriaSource.hpp \
-							IMateriaSource.hpp Cure.hpp Ice.hpp
+INCLUDES		=			ClapTrap.hpp ScavTrap.hpp FragTrap.hpp DiamondTrap.hpp
 
-SRCS			=			AMateria.cpp Character.cpp MateriaSource.cpp Cure.cpp Ice.cpp main.cpp
+SRCS			=			main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp DiamondTrap.cpp
 
 OBJS			=			$(SRCS:.cpp=.o)
 

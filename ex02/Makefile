@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/19 13:16:52 by nazouz            #+#    #+#              #
-#    Updated: 2024/07/19 13:17:10 by nazouz           ###   ########.fr        #
+#    Created: 2024/07/11 16:50:34 by nazouz            #+#    #+#              #
+#    Updated: 2024/07/11 16:58:53 by nazouz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			AbstractClass
+NAME			=			FragTrap
 
 CPP				=			c++
 
 CPPFLAGS		=			-Wall -Wextra -Werror
 
-INCLUDES		=			AAnimal.hpp Dog.hpp Cat.hpp Brain.hpp
+INCLUDES		=			ClapTrap.hpp ScavTrap.hpp FragTrap.hpp
 
-SRCS			=			main.cpp AAnimal.cpp Dog.cpp Cat.cpp Brain.cpp
+SRCS			=			main.cpp ClapTrap.cpp ScavTrap.cpp FragTrap.cpp
 
 OBJS			=			$(SRCS:.cpp=.o)
 
