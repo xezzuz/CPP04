@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/27 13:33:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/18 15:59:37 by nazouz           ###   ########.fr       */
+/*   Created: 2024/05/28 11:41:21 by nazouz            #+#    #+#             */
+/*   Updated: 2024/05/28 12:34:40 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DIAMONDTRAP_HPP
-#define DIAMONDTRAP_HPP
+#ifndef CAT_HPP
+#define CAT_HPP
 
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
+#include "Animal.hpp"
 
-class DiamondTrap : public ScavTrap, public FragTrap {
-	private:
-		std::string		name;
+class Cat : public Animal {
 	public:
-		DiamondTrap();
-		DiamondTrap(std::string Name);
-		DiamondTrap(const DiamondTrap& original);
-		DiamondTrap&	operator=(const DiamondTrap& original);
-		~DiamondTrap();
+		Cat();
+		Cat(const std::string type);
+		Cat(const Cat& original);
+		Cat&	operator=(const Cat& original);
+		~Cat();
 
-		void	attack(const std::string& target);
-		void	whoAmI();
+		void				makeSound() const;
 };
 
 #endif

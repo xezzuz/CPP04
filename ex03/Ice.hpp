@@ -1,32 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/23 11:01:30 by nazouz           ###   ########.fr       */
+/*   Created: 2024/07/19 17:40:09 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/21 15:37:20 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iomanip>
+#ifndef ICE_HPP
+#define ICE_HPP
 
-int main()
-{
-	// AAnimal*		anAnimal = new AAnimal(); // compiler error
+#include <iostream>
+#include "AMateria.hpp"
+#include "Character.hpp"
 
-	const AAnimal* aDog = new Dog();
-	const AAnimal* aCat = new Cat();
+/*
+	CONCRETE CLASS - FROM - AMateria ABSTRACT CLASS
+*/
 
-	aDog->makeSound();
-	aCat->makeSound();
+class Ice : public AMateria {
+	public:
+		Ice();
+		Ice(const std::string&	type);
+		Ice(const Ice& original);
+		Ice&		operator=(const Ice& original);
+		~Ice();
 
-	delete aDog;	// should not create a leak
-	delete aCat;
+		AMateria*	clone();
+		void		use(ICharacter& target);
+};
 
-	return 0;
-}
+#endif

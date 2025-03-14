@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/28 11:54:21 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/23 11:01:30 by nazouz           ###   ########.fr       */
+/*   Created: 2024/05/28 11:41:21 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/23 10:38:34 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AAnimal.hpp"
-#include "Dog.hpp"
-#include "Cat.hpp"
-#include <iomanip>
+#ifndef CAT_HPP
+#define CAT_HPP
 
-int main()
-{
-	// AAnimal*		anAnimal = new AAnimal(); // compiler error
+#include "Animal.hpp"
 
-	const AAnimal* aDog = new Dog();
-	const AAnimal* aCat = new Cat();
+class Cat : public Animal {
+	private:
+		Brain		*catBrain;
+	public:
+		Cat();
+		Cat(const std::string type);
+		Cat(const Cat& original);
+		Cat&	operator=(const Cat& original);
+		~Cat();
 
-	aDog->makeSound();
-	aCat->makeSound();
+		void				makeSound() const;
+		Brain*				getBrain();
+};
 
-	delete aDog;	// should not create a leak
-	delete aCat;
-
-	return 0;
-}
+#endif

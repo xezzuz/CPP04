@@ -5,30 +5,44 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/23 17:26:34 by nazouz            #+#    #+#             */
-/*   Updated: 2024/07/18 16:18:43 by nazouz           ###   ########.fr       */
+/*   Created: 2024/07/20 18:46:44 by nazouz            #+#    #+#             */
+/*   Updated: 2024/07/23 11:32:02 by nazouz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
-#include "ScavTrap.hpp"
-#include "FragTrap.hpp"
-#include "DiamondTrap.hpp"
+#include "AMateria.hpp"
+#include "Character.hpp"
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "MateriaSource.hpp"
 
-int main() {
-    DiamondTrap     diamondtrap("Diamonda");
+int main(void) {
+	IMateriaSource* src = new MateriaSource();
+	src->learnMateria(new Ice());
+	src->learnMateria(new Cure());
+	
+	ICharacter* me = new Character("me");
 
-    diamondtrap.attack("target1");
-    diamondtrap.takeDamage(3);
-    diamondtrap.beRepaired(5);
-    diamondtrap.attack("target2");
-    diamondtrap.takeDamage(20);
-    diamondtrap.attack("target3");
-    diamondtrap.beRepaired(10);
+	AMateria* tmp;
+	tmp = src->createMateria("ice");
+	me->equip(tmp);
+	tmp = src->createMateria("cure");
+	me->equip(tmp);
 
-    diamondtrap.whoAmI();
-    diamondtrap.guardGate();
-    diamondtrap.highFiveGuys();
+	AMateria* cloned = tmp->clone();
 
-    return 0;
+	me->unequip(0);
+	me->unequip(1);
+
+	ICharacter* bob = new Character("bob");
+
+	me->use(0, *bob);
+	me->use(1, *bob);
+
+	delete bob;
+	delete me;
+	delete src;
+	delete cloned;
+
+	return 0;
 }

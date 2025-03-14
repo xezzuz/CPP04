@@ -5,20 +5,20 @@
 #                                                     +:+ +:+         +:+      #
 #    By: nazouz <nazouz@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2024/07/11 14:43:08 by nazouz            #+#    #+#              #
-#    Updated: 2024/07/11 16:50:26 by nazouz           ###   ########.fr        #
+#    Created: 2024/07/19 11:00:38 by nazouz            #+#    #+#              #
+#    Updated: 2024/07/19 11:01:13 by nazouz           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME			=			ScavTrap
+NAME			=			Polymorphism
 
 CPP				=			c++
 
 CPPFLAGS		=			-Wall -Wextra -Werror
 
-INCLUDES		=			ClapTrap.hpp ScavTrap.hpp
+INCLUDES		=			Animal.hpp Dog.hpp Cat.hpp Brain.hpp
 
-SRCS			=			main.cpp ClapTrap.cpp ScavTrap.cpp
+SRCS			=			main.cpp Animal.cpp Dog.cpp Cat.cpp Brain.cpp
 
 OBJS			=			$(SRCS:.cpp=.o)
 
